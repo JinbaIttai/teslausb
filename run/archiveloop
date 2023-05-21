@@ -152,6 +152,8 @@ function retry () {
     if [ "$attempts" -ge 10 ]
     then
       log "Attempts exhausted."
+      log "rebooting." # MK
+      /sbin/reboot -nf # MK
       false
       return
     fi
